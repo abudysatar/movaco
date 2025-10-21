@@ -2,12 +2,14 @@
   "name": "movaco",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://abudysatar.github.io/movaco/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@carbon/icons-react": "^11.68.0",
