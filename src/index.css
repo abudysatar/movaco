@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-main-red: #e50000;
+  --color-main-black: #0f0f0f;
+  --color-black-8: #141414;
+  --color-black-10: #1a1a1a;
+  --color-black-12: #1f1f1f;
+  --color-black-15: #262626;
+  --color-black-20: #333333;
+
+  --color-grey60: #999999;
+  --color-grey65: #a6a6a6;
+  --color-grey70: #b3b3b3;
+  --color-grey75: #bfbfbf;
+  /* ------------------------------------------- */
+  --text-huge-58: 3.6rem;
+  --text-huge-mob-24: 1.5rem;
+  --text-huge-48: 3rem;
+  --text-huge-mob-28: 1.75rem;
+  --text-huge2-38: 2.4rem;
+  --text-huge2-mob: 2rem;
+  --text-medium-12: 0.75rem;
+  --text-small-16: 1rem;
+  --text-medium-18: 1.1rem;
+  --text-medium-20: 1.25rem;
+  /* ------------------------------------------- */
+}
+
+body {
+  background-color: #141414;
+  font-family: "Epunda Slab", serif;
+}
+
+@tailwind utilities;
+
+@layer components {
+  .swiper-pagination {
+    display: none !important;
+  }
+
+  @media (min-width: 768px) {
+    .swiper-pagination {
+      display: flex !important;
+      justify-content: center !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 2rem !important;
+      position: absolute !important;
+      gap: 0.5rem;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    @apply bg-grey60 opacity-100 rounded-full transition-all duration-300;
+    width: 0.7rem !important;
+    height: 0.3rem !important;
+    border-radius: 9999px !important;
+    background-color: var(--color-grey60) !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--color-main-red) !important;
+    width: 1.3rem !important;
+    border-radius: 9999px !important;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.25s ease-out forwards;
+}
+
+@keyframes grainMove {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-5px, 5px);
+  }
+  50% {
+    transform: translate(5px, -5px);
+  }
+  75% {
+    transform: translate(-5px, -5px);
+  }
+}
+
+.grain {
+  animation: grainMove 2s steps(10) infinite;
+}
