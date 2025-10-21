@@ -44,7 +44,6 @@ async function initApp() {
       <BrowserRouter>
         <ScrollToHashElement />
         <Routes>
-          {/* All normal pages inside Layout */}
           <Route
             path="/"
             element={
