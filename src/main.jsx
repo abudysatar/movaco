@@ -123,7 +123,6 @@ async function initApp() {
             }
           />
 
-          {/* Fullscreen 404 outside Layout */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
